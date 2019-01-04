@@ -6,7 +6,7 @@
 /*   By: tdontos- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 12:58:23 by tdontos-          #+#    #+#             */
-/*   Updated: 2019/01/04 12:58:25 by tdontos-         ###   ########.fr       */
+/*   Updated: 2019/01/04 18:49:15 by drdraugr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -81,16 +81,14 @@ int		is_invalid_form(t_elem elem)
 void	freelst(t_list **alst)
 {
 	t_list	*lst;
-	t_list	*nxtlst;
 
 	lst = *alst;
 	while (lst)
 	{
-		nxtlst = lst->next;
 		free(&(lst->content));
 		free(&(lst->content_size));
 		free(lst);
-		lst = nxtlst;
+		lst = lst->next;
 	}
 	*alst = NULL;
 }

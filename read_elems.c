@@ -6,7 +6,7 @@
 /*   By: tdontos- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/12/29 19:09:43 by tdontos-          #+#    #+#             */
-/*   Updated: 2019/01/03 13:36:47 by variya           ###   ########.fr       */
+/*   Updated: 2019/01/04 19:08:33 by drdraugr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -59,7 +59,6 @@ t_list	*create_elem(char *str_elem, char letter)
 	int			i;
 	int			point;
 	t_elem		elem;
-	t_list		*new;
 
 	point = 0;
 	i = 0;
@@ -79,8 +78,7 @@ t_list	*create_elem(char *str_elem, char letter)
 	if (is_invalid_form(elem))
 		return (NULL);
 	normalize(&elem);
-	new = ft_lstnew(&elem, sizeof(t_elem));
-	return (new);
+	return (ft_lstnew(&elem, sizeof(t_elem)));
 }
 
 t_list	*read_elems(int fd)
@@ -102,7 +100,7 @@ t_list	*read_elems(int fd)
 			error_exit();
 		elem = create_elem(str_elem, letter++);
 		if (elem == NULL)
-			free(elems);
+			freelst(&elems);
 		ft_lstappend(&elems, elem);
 	}
 	if (ret == -1 || elems == NULL || str_elem[20] == '\n')

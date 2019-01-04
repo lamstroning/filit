@@ -6,20 +6,18 @@
 /*   By: drdraugr <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/03 15:25:33 by drdraugr          #+#    #+#             */
-/*   Updated: 2019/01/03 22:46:34 by variya           ###   ########.fr       */
+/*   Updated: 2019/01/04 18:58:36 by drdraugr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "fillit.h"
 #include "libft/libft.h"
 
-void	free_map(char ***map)
+void	free_map(char ***map, int size)
 {
 	int		i;
-	int		size;
 
 	i = -1;
-	size = sizeof(*map) / sizeof(*map[0]);
 	if (*map == NULL)
 		return ;
 	if (*map != NULL)

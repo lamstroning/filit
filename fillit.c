@@ -6,7 +6,7 @@
 /*   By: tdontos- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2019/01/04 12:52:41 by tdontos-          #+#    #+#             */
-/*   Updated: 2019/01/04 12:52:43 by tdontos-         ###   ########.fr       */
+/*   Updated: 2019/01/04 19:10:34 by drdraugr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -51,10 +51,10 @@ void	fillit(t_list *elems)
 	map = init_map(map_size);
 	while (!is_map_filled(&map, elems, map_size))
 	{
+		free_map(&map, map_size);
 		map_size++;
-		free_map(&map);
 		map = init_map(map_size);
 	}
 	print_map(map, map_size);
-	free_map(&map);
+	free_map(&map, map_size);
 }

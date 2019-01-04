@@ -6,7 +6,7 @@
 /*   By: tdontos- <marvin@42.fr>                    +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2018/28/19 17:29:50 by tdontos-          #+#    #+#             */
-/*   Updated: 2019/01/04 12:36:40 by tdontos-         ###   ########.fr       */
+/*   Updated: 2019/01/04 19:09:17 by drdraugr         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -29,6 +29,6 @@ int		main(int argc, char **argv)
 	fd = open(argv[1], O_RDONLY);
 	elems = read_elems(fd);
 	fillit(elems);
-	free(elems);
+	freelst(&elems);
 	return (0);
 }
